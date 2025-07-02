@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "api/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "VITE_API_URL": "https://ubytech.com.br/api",
+    "VITE_MERCADOPAGO_PUBLIC_KEY": "APP_USR-697ad0e6-a689-4908-8cac-30658252bf5e",
+    "MERCADOPAGO_ACCESS_TOKEN": "APP_USR-5945815842366386-062818-9a6767239719c70fafe74ac362fa51e5-1806786938",
+    "MERCADOPAGO_PUBLIC_KEY": "APP_USR-697ad0e6-a689-4908-8cac-30658252bf5e"
+  }
+}

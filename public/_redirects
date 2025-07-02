@@ -1,0 +1,5 @@
+# Redirect para Netlify Function de cadastro
+/api/cadastro  /.netlify/functions/cadastro  200
+
+# Redirect SPA (deixe por último)
+/*    /index.html   200
